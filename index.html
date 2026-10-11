@@ -1,0 +1,265 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>James No · Software Engineer</title>
+<meta name="description" content="Portfolio of James No, Computer Science student at Skagit Valley College and U.S. Army veteran, graduating June 2027.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap">
+<style>
+:root{
+  --bg:#F6F7F9; --surface:#FFFFFF; --ink:#16202A; --muted:#52606D; --line:#D9DEE4;
+  --accent:#0E6B66; --accent-ink:#FFFFFF; --accent-soft:#E2F1EF; --tag:#EEF1F4;
+  --sans:"IBM Plex Sans",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+  --mono:"IBM Plex Mono",ui-monospace,Menlo,Consolas,monospace;
+}
+@media (prefers-color-scheme: dark){
+  :root{--bg:#0F151B;--surface:#161E26;--ink:#E6EBF0;--muted:#9AA8B5;--line:#283440;
+        --accent:#5CC4BB;--accent-ink:#0B1A19;--accent-soft:#16312F;--tag:#1E2832;color-scheme:dark}
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--sans);font-size:17px;line-height:1.6}
+a{color:var(--accent)}
+a:focus-visible,button:focus-visible{outline:3px solid var(--accent);outline-offset:3px;border-radius:4px}
+.skip{position:absolute;left:-999px;top:8px;background:var(--accent);color:var(--accent-ink);padding:8px 14px;border-radius:6px;z-index:10}
+.skip:focus{left:16px}
+.wrap{max-width:960px;margin:0 auto;padding-inline:20px}
+header.site{position:sticky;top:0;z-index:5;background:color-mix(in srgb,var(--bg) 92%,transparent);backdrop-filter:blur(6px);border-bottom:1px solid var(--line)}
+header.site .wrap{display:flex;flex-wrap:wrap;gap:8px 20px;align-items:center;justify-content:space-between;padding-block:12px}
+.brand{font-weight:700;text-decoration:none;color:var(--ink);letter-spacing:-.01em}
+nav ul{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:4px 18px}
+nav a{color:var(--muted);text-decoration:none;font-size:15px;font-weight:500}
+nav a:hover{color:var(--accent)}
+section{padding-block:56px;border-bottom:1px solid var(--line)}
+section:last-of-type{border-bottom:0}
+h1{font-size:clamp(2rem,5vw,2.9rem);line-height:1.15;margin:0 0 6px;letter-spacing:-.02em;text-wrap:balance}
+h2{font-size:1.6rem;margin:0 0 20px;letter-spacing:-.01em}
+h3{font-size:1.25rem;margin:0}
+h4{font-size:.8rem;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);margin:18px 0 4px}
+p{margin:0 0 12px;max-width:68ch}
+.eyebrow{font-family:var(--mono);font-size:.85rem;color:var(--accent);margin:0 0 10px}
+.lede{font-size:1.15rem;color:var(--muted);margin-bottom:20px}
+.hero{padding-block:72px 56px}
+.btns{display:flex;flex-wrap:wrap;gap:10px;margin-top:22px}
+.btn{display:inline-block;padding:10px 18px;border-radius:8px;border:1px solid var(--accent);font-weight:600;text-decoration:none;font-size:15px}
+.btn.primary{background:var(--accent);color:var(--accent-ink)}
+.facts{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px;margin-top:28px}
+.fact{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:14px 16px}
+.fact dt{font-size:.78rem;text-transform:uppercase;letter-spacing:.07em;color:var(--muted)}
+.fact dd{margin:2px 0 0;font-weight:600}
+.project{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:24px;margin-bottom:22px}
+.project-head{display:flex;flex-wrap:wrap;justify-content:space-between;gap:6px 16px;align-items:baseline}
+.meta{font-family:var(--mono);font-size:.82rem;color:var(--muted)}
+.tags{display:flex;flex-wrap:wrap;gap:6px;list-style:none;padding:0;margin:10px 0 4px}
+.tags li{font-family:var(--mono);font-size:.78rem;background:var(--tag);border-radius:5px;padding:2px 8px}
+.project ul.points{margin:0 0 8px;padding-left:20px}
+.project ul.points li{margin-bottom:4px;max-width:68ch}
+.evidence{display:flex;flex-wrap:wrap;gap:14px;margin-top:14px;padding-top:14px;border-top:1px solid var(--line);font-weight:500;font-size:15px}
+figure{margin:14px 0 4px}
+figure img{max-width:100%;border:1px solid var(--line);border-radius:8px;display:block}
+figcaption{font-size:.85rem;color:var(--muted);margin-top:4px}
+.skills{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px}
+.skillgroup{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:18px 20px}
+.skillgroup h3{font-size:1rem;margin-bottom:8px}
+.level{font-size:.8rem;color:var(--muted);font-weight:500}
+.links{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;list-style:none;padding:0;margin:0}
+.links a{display:block;background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:14px 16px;text-decoration:none;color:var(--ink)}
+.links a:hover{border-color:var(--accent)}
+.links span{display:block;font-size:.8rem;color:var(--muted)}
+.links strong{color:var(--accent);word-break:break-word}
+footer{padding-block:28px;color:var(--muted);font-size:.85rem}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to main content</a>
+<header class="site">
+  <div class="wrap">
+    <a class="brand" href="#top">James No</a>
+    <nav aria-label="Main">
+      <ul>
+        <li><a href="#about">About</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#resume">Resume</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+  <section class="hero" id="top">
+    <div class="wrap">
+      <p class="eyebrow">Software Engineer · B.S. Computer Science, June 2027</p>
+      <h1>James No</h1>
+      <p class="lede">Computer Science student at Skagit Valley College and U.S. Army veteran, building full-stack and AI-assisted applications in Java, Python, and JavaScript.</p>
+      <div class="btns">
+        <a class="btn primary" href="#projects">View projects</a>
+        <a class="btn" href="James_No_Resume.pdf" download>Download resume (PDF)</a>
+      </div>
+      <dl class="facts">
+        <div class="fact"><dt>Program</dt><dd>B.S. Computer Science, Skagit Valley College</dd></div>
+        <div class="fact"><dt>Graduating</dt><dd>June 2027 · GPA 3.93</dd></div>
+        <div class="fact"><dt>Interests</dt><dd>Backend, full-stack, security</dd></div>
+        <div class="fact"><dt>Based in</dt><dd>Anacortes, WA · open to remote</dd></div>
+      </dl>
+    </div>
+  </section>
+
+  <section id="about" aria-labelledby="about-h">
+    <div class="wrap">
+      <h2 id="about-h">About me</h2>
+      <p>I'm James No, a senior in the Bachelor of Science in Computer Science program at Skagit Valley College, graduating in June 2027. My main interests are backend and full-stack software engineering, with a growing focus on application security.</p>
+      <p>I came to software engineering through a less typical path. After earning a psychology degree from Washington State University, I helped run my family's restaurants, then served four years in the U.S. Army as a Geospatial Intelligence Imagery Analyst. I was promoted to Sergeant in just over two years, trained junior analysts, and wrote standard operating procedures that made our team's work more consistent. Those roles taught me to stay calm under deadlines, document what I do, and communicate clearly across teams.</p>
+      <p>Today I bring that same discipline to code. I've led QA and production deployment for a team-built Spring Boot and React application, built an AI interview coach with Python and Azure OpenAI, and contributed a merged test to an open-source energy dashboard.</p>
+      <p><strong>Career goal:</strong> to start as a new-grad software engineer in 2027, ideally on a team that builds secure, reliable backend systems, and to keep growing toward security-focused engineering.</p>
+    </div>
+  </section>
+
+  <section id="projects" aria-labelledby="projects-h">
+    <div class="wrap">
+      <h2 id="projects-h">Featured projects</h2>
+
+      <article class="project" aria-labelledby="p1">
+        <div class="project-head">
+          <h3 id="p1">Task Mentor: Full-Stack Mentoring Marketplace</h3>
+          <span class="meta">Team project · CS 301 · Fall 2025</span>
+        </div>
+        <ul class="tags" aria-label="Technologies">
+          <li>Java 21</li><li>Spring Boot 3</li><li>Spring Security</li><li>React 18</li><li>PostgreSQL</li><li>JWT</li><li>Render</li><li>Netlify</li>
+        </ul>
+        <h4>Problem / purpose</h4>
+        <p>Students need an easy way to find mentors and book time with them. Our four-person team built a web marketplace where students search mentors by multiple filters and book sessions, with separate permissions for students and mentors.</p>
+        <h4>My role and contributions</h4>
+        <ul class="points">
+          <li>Led QA: designed and ran tests across 15+ features, including JWT login, role-based access control, booking workflows, and multi-filter mentor search.</li>
+          <li>Owned production deployment: Spring Boot backend on Render and React frontend on Netlify, configuring environment variables, CORS policies, and JWT secrets.</li>
+          <li>Merged the final release pull requests, including a Maven wrapper permissions fix that unblocked the build, the production release, and the final README.</li>
+          <li>Wrote the technical documentation: architecture overview, REST API contracts, local setup guide, and a QA report covering functional and edge-case tests.</li>
+        </ul>
+        <h4>Outcome and lessons learned</h4>
+        <p>We shipped a fully deployed, working application. The biggest lesson was that "works on my machine" is not done: hosting the frontend and backend separately meant CORS rules and environment variables had to be exactly right, and secrets like the JWT key had to stay out of the code. Testing role-based access also showed me how easily permission bugs hide unless you test as every type of user.</p>
+        <div class="evidence">
+          <a href="https://github.com/don-strong/task-mentor">Source code on GitHub</a>
+        </div>
+      </article>
+
+      <article class="project" aria-labelledby="p2">
+        <div class="project-head">
+          <h3 id="p2">Interview Practice Bot: AI Interview Coach</h3>
+          <span class="meta">Solo project</span>
+        </div>
+        <ul class="tags" aria-label="Technologies">
+          <li>Python</li><li>Azure OpenAI (GPT-4.1)</li><li>Multi-turn conversation</li>
+        </ul>
+        <h4>Problem / purpose</h4>
+        <p>Practicing for technical and behavioral interviews is hard without someone to ask questions and give honest feedback. I built a conversational coach that runs realistic, role-specific mock interviews and scores the answers.</p>
+        <h4>My role and contributions</h4>
+        <ul class="points">
+          <li>Designed a five-phase interview flow: setup, question generation, per-answer evaluation, targeted feedback, and a scored session summary.</li>
+          <li>Managed the full conversation history so the coach keeps context across an entire session and can judge how answers improve over time.</li>
+          <li>Built an evaluation pipeline that rates each answer on completeness, clarity, technical accuracy, and communication, then produces a ranked list of improvements.</li>
+        </ul>
+        <h4>Outcome and lessons learned</h4>
+        <p>The result is a tool I use for my own interview prep. Breaking the interview into clear phases made the AI's behavior far more predictable than a single open-ended prompt. I also learned to treat model output as something to check, not trust blindly, which matters when AI is part of an engineering workflow.</p>
+        <div class="evidence">
+          <a href="https://github.com/james-no/interview-practice-bot">Source code on GitHub</a>
+        </div>
+      </article>
+
+      <article class="project" aria-labelledby="p3">
+        <div class="project-head">
+          <h3 id="p3">Open Energy Dashboard: Open-Source Contribution</h3>
+          <span class="meta">Open-source contributor</span>
+        </div>
+        <ul class="tags" aria-label="Technologies">
+          <li>JavaScript</li><li>TypeScript</li><li>Mocha</li><li>CI/CD</li><li>Git</li>
+        </ul>
+        <h4>Problem / purpose</h4>
+        <p>Open Energy Dashboard (OED) is an open-source platform that energy utilities use to view meter data. Its charts needed test coverage so changes would not quietly break them.</p>
+        <h4>My role and contributions</h4>
+        <ul class="points">
+          <li>Wrote a test case for the 7-day bar chart rendering of grouped flow meters, and got it reviewed and merged into the main project.</li>
+          <li>Worked through the project's full contribution process in a codebase with 250+ contributors and 485 forks: finding the issue, opening a pull request, responding to maintainer review, and passing automated CI checks.</li>
+        </ul>
+        <h4>Outcome and lessons learned</h4>
+        <p>My test is now part of a production project. Working in a large existing codebase taught me to read before writing, follow the project's conventions, and treat code review feedback as part of the work rather than a hurdle.</p>
+        <div class="evidence">
+          <a href="https://github.com/OpenEnergyDashboard/OED">OED repository on GitHub</a>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <section id="skills" aria-labelledby="skills-h">
+    <div class="wrap">
+      <h2 id="skills-h">Skills and tools</h2>
+      <div class="skills">
+        <div class="skillgroup">
+          <h3>Languages</h3>
+          <p>Java, Python, JavaScript, SQL <span class="level">(project experience)</span></p>
+          <p>TypeScript <span class="level">(working knowledge)</span></p>
+        </div>
+        <div class="skillgroup">
+          <h3>Frameworks and libraries</h3>
+          <p>Spring Boot, Spring Security, React <span class="level">(project experience)</span></p>
+          <p>Vite, Tailwind CSS, Axios, Maven, Mocha <span class="level">(used in projects)</span></p>
+        </div>
+        <div class="skillgroup">
+          <h3>Databases and cloud</h3>
+          <p>PostgreSQL <span class="level">(coursework and projects)</span></p>
+          <p>Azure OpenAI, Render, Netlify <span class="level">(used in projects)</span></p>
+        </div>
+        <div class="skillgroup">
+          <h3>Security</h3>
+          <p>JWT authentication, role-based access control, CORS, secrets management <span class="level">(applied in Task Mentor)</span></p>
+          <p>Security Foundations coursework <span class="level">(in progress)</span></p>
+        </div>
+        <div class="skillgroup">
+          <h3>Development tools</h3>
+          <p>Git and GitHub, Visual Studio Code, REST APIs, CI/CD workflows, AI coding assistants, Microsoft Excel</p>
+        </div>
+        <div class="skillgroup">
+          <h3>Professional</h3>
+          <p>QA testing, technical documentation, team leadership, training and mentoring</p>
+          <p>Languages: English (fluent), Korean (conversational)</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="resume" aria-labelledby="resume-h">
+    <div class="wrap">
+      <h2 id="resume-h">Resume and education</h2>
+      <p>B.S. Computer Science, Skagit Valley College (expected June 2027, GPA 3.93) · A.A.S. Intelligence Operations Studies, Cochise College (2019) · B.S. Psychology, Washington State University (2013)</p>
+      <div class="btns">
+        <a class="btn primary" href="James_No_Resume.pdf" download>Download resume (PDF)</a>
+        <a class="btn" href="James_No_Resume.pdf">View in browser</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" aria-labelledby="contact-h">
+    <div class="wrap">
+      <h2 id="contact-h">Contact and links</h2>
+      <p>I'm looking for new-grad software engineering roles starting in 2027. The best way to reach me is email.</p>
+      <ul class="links">
+        <li><a href="mailto:james.d.no@outlook.com"><span>Email</span><strong>james.d.no@outlook.com</strong></a></li>
+        <li><a href="https://www.linkedin.com/in/james-no"><span>LinkedIn</span><strong>linkedin.com/in/james-no</strong></a></li>
+        <li><a href="https://github.com/james-no"><span>GitHub</span><strong>github.com/james-no</strong></a></li>
+      </ul>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <p>© 2026 James No. Portfolio content drafted with help from Claude (Anthropic) and reviewed and edited by James No.</p>
+  </div>
+</footer>
+</body>
+</html>
